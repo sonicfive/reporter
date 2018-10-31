@@ -19,7 +19,7 @@
                     <b-datepicker
                         v-model="date_to"
                         placeholder="To Date"
-                        icon="fa-home"
+                        icon="fa fa-home"
                         icon-pack="fa"
                         >
                     </b-datepicker>
@@ -52,7 +52,7 @@
                         :key="index"
                         class="control">
                         <b-checkbox v-model="column.visible">
-                            {{ column.label }}
+                            {{ remove_underscores( column.label ) }}
                         </b-checkbox>
                     </div>
          </b-field>
@@ -95,6 +95,9 @@
                     this.$store.dispatch('report/GET_RANGE', {from:this.post_date_from, to: this.post_date_to})
                 }
             }
+        },
+        'remove_underscores': function( string ){
+            return _.replace( string, '_',  ' ')
         },
          confirm() {
                 this.$dialog.confirm({

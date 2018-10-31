@@ -12,5 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+mix.js('node_modules/@cmyee/pushy/js/pushy.js', 'public/js')
+.sass('node_modules/@cmyee/pushy/scss/pushy.scss', 'public/css')
    .sass('resources/sass/app.scss', 'public/css')
-   mix.browserSync('reporter.whatever');
+//    mix.browserSync('reporter.whatever');
