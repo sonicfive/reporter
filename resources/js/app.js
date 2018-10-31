@@ -13,7 +13,7 @@ import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 Vue.use(Buefy, {
     defaultIconPack: 'mdi',
-    defaultContainerElement: 'i'
+    defaultContainerElement: 'span'
 });
 
 import VueRouter from 'vue-router'

@@ -42601,8 +42601,7 @@ var index_esm = {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(143);
-__webpack_require__(192);
-module.exports = __webpack_require__(193);
+module.exports = __webpack_require__(192);
 
 
 /***/ }),
@@ -42635,7 +42634,7 @@ window.Vue = __webpack_require__(4);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a, {
     defaultIconPack: 'mdi',
-    defaultContainerElement: 'i'
+    defaultContainerElement: 'span'
 });
 
 
@@ -80599,7 +80598,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -80643,6 +80642,22 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -80764,7 +80779,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             isPaginated: true,
             perPage: 5,
             currentPage: 1,
-            isPaginationSimple: false
+            isPaginationSimple: false,
+            activeTab: 0
         };
     },
 
@@ -80784,124 +80800,207 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "section" }, [
-    _c("div", { staticClass: "columns" }, [
-      _c(
-        "div",
-        { staticClass: "column" },
-        [
-          _c(
-            "b-field",
-            { attrs: { label: "Select Start Date" } },
-            [
-              _c("b-datepicker", {
-                attrs: {
-                  placeholder: "From Date",
-                  icon: "bookmarks",
-                  pack: "mdi"
-                },
-                model: {
-                  value: _vm.date_from,
-                  callback: function($$v) {
-                    _vm.date_from = $$v
+  return _c(
+    "section",
+    { staticClass: "section" },
+    [
+      _c("div", { staticClass: "columns" }, [
+        _c(
+          "div",
+          { staticClass: "column" },
+          [
+            _c(
+              "b-field",
+              { attrs: { label: "Select Start Date" } },
+              [
+                _c("b-datepicker", {
+                  attrs: {
+                    placeholder: "From Date",
+                    icon: "bookmarks",
+                    pack: "mdi"
                   },
-                  expression: "date_from"
-                }
-              })
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "column" },
-        [
-          _c(
-            "b-field",
-            { attrs: { label: "Select End Date" } },
-            [
-              _c("b-datepicker", {
-                attrs: {
-                  placeholder: "To Date",
-                  icon: "fa fa-home",
-                  "icon-pack": "fa"
-                },
-                model: {
-                  value: _vm.date_to,
-                  callback: function($$v) {
-                    _vm.date_to = $$v
-                  },
-                  expression: "date_to"
-                }
-              })
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "column" },
-        [
-          _c(
-            "b-field",
-            { attrs: { grouped: "", "group-multiline": "" } },
-            [
-              _c(
-                "b-select",
-                {
-                  attrs: { disabled: !_vm.isPaginated },
                   model: {
-                    value: _vm.perPage,
+                    value: _vm.date_from,
                     callback: function($$v) {
-                      _vm.perPage = $$v
+                      _vm.date_from = $$v
                     },
-                    expression: "perPage"
+                    expression: "date_from"
                   }
-                },
-                [
-                  _c("option", { attrs: { value: "5" } }, [
-                    _vm._v("5 per page")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "10" } }, [
-                    _vm._v("10 per page")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "15" } }, [
-                    _vm._v("15 per page")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "20" } }, [
-                    _vm._v("20 per page")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "control is-flex" },
-                [
-                  _c(
-                    "b-switch",
-                    {
-                      model: {
-                        value: _vm.isPaginated,
-                        callback: function($$v) {
-                          _vm.isPaginated = $$v
-                        },
-                        expression: "isPaginated"
-                      }
+                })
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "column" },
+          [
+            _c(
+              "b-field",
+              { attrs: { label: "Select End Date" } },
+              [
+                _c("b-datepicker", {
+                  attrs: {
+                    placeholder: "To Date",
+                    icon: "fa fa-home",
+                    "icon-pack": "fa"
+                  },
+                  model: {
+                    value: _vm.date_to,
+                    callback: function($$v) {
+                      _vm.date_to = $$v
                     },
-                    [_vm._v("Paginated")]
+                    expression: "date_to"
+                  }
+                })
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "column" },
+          [
+            _c(
+              "b-field",
+              { attrs: { grouped: "", "group-multiline": "" } },
+              [
+                _c(
+                  "b-select",
+                  {
+                    attrs: { disabled: !_vm.isPaginated },
+                    model: {
+                      value: _vm.perPage,
+                      callback: function($$v) {
+                        _vm.perPage = $$v
+                      },
+                      expression: "perPage"
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "5" } }, [
+                      _vm._v("5 per page")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "10" } }, [
+                      _vm._v("10 per page")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "15" } }, [
+                      _vm._v("15 per page")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "20" } }, [
+                      _vm._v("20 per page")
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "control is-flex" },
+                  [
+                    _c(
+                      "b-switch",
+                      {
+                        model: {
+                          value: _vm.isPaginated,
+                          callback: function($$v) {
+                            _vm.isPaginated = $$v
+                          },
+                          expression: "isPaginated"
+                        }
+                      },
+                      [_vm._v("Paginated")]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "b-tabs",
+        {
+          model: {
+            value: _vm.activeTab,
+            callback: function($$v) {
+              _vm.activeTab = $$v
+            },
+            expression: "activeTab"
+          }
+        },
+        [
+          _c(
+            "b-tab-item",
+            { attrs: { label: "Data" } },
+            [
+              _c("b-table", {
+                attrs: {
+                  data: _vm.report.data,
+                  columns: _vm.report.columns,
+                  paginated: _vm.isPaginated,
+                  "per-page": _vm.perPage,
+                  "current-page": _vm.currentPage,
+                  "pagination-simple": _vm.isPaginationSimple,
+                  narrowed: true
+                },
+                on: {
+                  "update:currentPage": function($event) {
+                    _vm.currentPage = $event
+                  }
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "b-tab-item",
+            { attrs: { label: "Columns" } },
+            [
+              _c(
+                "b-field",
+                { attrs: { grouped: "", "group-multiline": "" } },
+                _vm._l(_vm.report.columns, function(column, index) {
+                  return _c(
+                    "div",
+                    { key: index, staticClass: "control" },
+                    [
+                      _c(
+                        "b-checkbox",
+                        {
+                          model: {
+                            value: column.visible,
+                            callback: function($$v) {
+                              _vm.$set(column, "visible", $$v)
+                            },
+                            expression: "column.visible"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                " +
+                              _vm._s(_vm.remove_underscores(column.label)) +
+                              "\n                            "
+                          )
+                        ]
+                      )
+                    ],
+                    1
                   )
-                ],
-                1
+                })
               )
             ],
             1
@@ -80909,71 +81008,9 @@ var render = function() {
         ],
         1
       )
-    ]),
-    _vm._v(" "),
-    _c(
-      "article",
-      [
-        _c(
-          "b-field",
-          { attrs: { grouped: "", "group-multiline": "" } },
-          _vm._l(_vm.report.columns, function(column, index) {
-            return _c(
-              "div",
-              { key: index, staticClass: "control" },
-              [
-                _c(
-                  "b-checkbox",
-                  {
-                    model: {
-                      value: column.visible,
-                      callback: function($$v) {
-                        _vm.$set(column, "visible", $$v)
-                      },
-                      expression: "column.visible"
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(_vm.remove_underscores(column.label)) +
-                        "\n                        "
-                    )
-                  ]
-                )
-              ],
-              1
-            )
-          })
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "tile is-child" },
-      [
-        _c("b-table", {
-          attrs: {
-            data: _vm.report.data,
-            columns: _vm.report.columns,
-            paginated: _vm.isPaginated,
-            "per-page": _vm.perPage,
-            "current-page": _vm.currentPage,
-            "pagination-simple": _vm.isPaginationSimple,
-            narrowed: true
-          },
-          on: {
-            "update:currentPage": function($event) {
-              _vm.currentPage = $event
-            }
-          }
-        })
-      ],
-      1
-    )
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -90708,12 +90745,6 @@ if (false) {
 
 /***/ }),
 /* 192 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 193 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

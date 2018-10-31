@@ -2,73 +2,89 @@
 <section class="section">
 
     <div class="columns">
-        <div class="column">
-              <b-field label="Select Start Date">
-                <b-datepicker
-                    v-model="date_from"
-                    placeholder="From Date"
-                    icon="bookmarks"
-                    pack="mdi"
-                    >
+                    <div class="column">
+                        <b-field label="Select Start Date">
+                            <b-datepicker
+                                v-model="date_from"
+                                placeholder="From Date"
+                                icon="bookmarks"
+                                pack="mdi"
+                                >
 
-                </b-datepicker>
-            </b-field>
-         </div>
-           <div class="column">
-               <b-field label="Select End Date">
-                    <b-datepicker
-                        v-model="date_to"
-                        placeholder="To Date"
-                        icon="fa fa-home"
-                        icon-pack="fa"
-                        >
-                    </b-datepicker>
-                </b-field>
-         </div>
-         <div class="column">
-                 <b-field grouped group-multiline>
-
-
-                    <b-select v-model="perPage" :disabled="!isPaginated">
-                        <option value="5">5 per page</option>
-                        <option value="10">10 per page</option>
-                        <option value="15">15 per page</option>
-                        <option value="20">20 per page</option>
-                    </b-select>
-
-                    <div class="control is-flex">
-                        <b-switch v-model="isPaginated">Paginated</b-switch>
+                            </b-datepicker>
+                        </b-field>
                     </div>
-
-
-
-
-                </b-field>
-         </div>
-    </div>
-    <article>
-         <b-field grouped group-multiline>
-          <div v-for="(column, index) in report.columns"
-                        :key="index"
-                        class="control">
-                        <b-checkbox v-model="column.visible">
-                            {{ remove_underscores( column.label ) }}
-                        </b-checkbox>
+                    <div class="column">
+                        <b-field label="Select End Date">
+                                <b-datepicker
+                                    v-model="date_to"
+                                    placeholder="To Date"
+                                    icon="fa fa-home"
+                                    icon-pack="fa"
+                                    >
+                                </b-datepicker>
+                            </b-field>
                     </div>
-         </b-field>
-    </article>
+                    <div class="column">
+                            <b-field grouped group-multiline >
 
-    <div class="tile is-child">
-        <b-table
-        :data="report.data"
-        :columns="report.columns"
-        :paginated="isPaginated"
-        :per-page="perPage"
-        :current-page.sync="currentPage"
-        :pagination-simple="isPaginationSimple"
-        :narrowed="true"
-        ></b-table>
-    </div>
+
+                                <b-select v-model="perPage" :disabled="!isPaginated">
+                                    <option value="5">5 per page</option>
+                                    <option value="10">10 per page</option>
+                                    <option value="15">15 per page</option>
+                                    <option value="20">20 per page</option>
+                                </b-select>
+
+                                <div class="control is-flex">
+                                    <b-switch v-model="isPaginated">Paginated</b-switch>
+                                </div>
+
+
+
+
+                            </b-field>
+                    </div>
+                </div>
+
+    <b-tabs v-model="activeTab">
+            <b-tab-item label="Data">
+
+
+                <b-table
+                :data="report.data"
+                :columns="report.columns"
+                :paginated="isPaginated"
+                :per-page="perPage"
+                :current-page.sync="currentPage"
+                :pagination-simple="isPaginationSimple"
+                :narrowed="true"
+                ></b-table>
+            </b-tab-item>
+
+            <b-tab-item label="Columns">
+                        <b-field grouped group-multiline>
+                        <div v-for="(column, index) in report.columns"
+                            :key="index"
+                            class="control">
+                            <b-checkbox v-model="column.visible">
+                                {{ remove_underscores( column.label ) }}
+                            </b-checkbox>
+                        </div>
+                        </b-field>
+            </b-tab-item>
+        </b-tabs>
+
+
+
+
+
+
+
+
+
+
+
 
 
 </section>
@@ -116,6 +132,7 @@
             perPage: 5,
             currentPage:1,
             isPaginationSimple: false,
+            activeTab: 0
         }
     },
 
