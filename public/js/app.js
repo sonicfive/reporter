@@ -42634,7 +42634,7 @@ window.Vue = __webpack_require__(4);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a, {
     defaultIconPack: 'mdi',
-    defaultContainerElement: 'span'
+    defaultContainerElement: 'body'
 });
 
 
@@ -80843,11 +80843,7 @@ var render = function() {
               { attrs: { label: "Select End Date" } },
               [
                 _c("b-datepicker", {
-                  attrs: {
-                    placeholder: "To Date",
-                    icon: "fa fa-home",
-                    "icon-pack": "fa"
-                  },
+                  attrs: { placeholder: "To Date" },
                   model: {
                     value: _vm.date_to,
                     callback: function($$v) {

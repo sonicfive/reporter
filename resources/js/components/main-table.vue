@@ -3,6 +3,7 @@
 
     <div class="columns">
                     <div class="column">
+
                         <b-field label="Select Start Date">
                             <b-datepicker
                                 v-model="date_from"
@@ -19,8 +20,7 @@
                                 <b-datepicker
                                     v-model="date_to"
                                     placeholder="To Date"
-                                    icon="fa fa-home"
-                                    icon-pack="fa"
+
                                     >
                                 </b-datepicker>
                             </b-field>
